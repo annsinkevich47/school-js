@@ -1,0 +1,242 @@
+.body {
+    position: relative;
+}
+.wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #7F00FF 7px;
+    width: 90vw;
+    height: 90vh;
+    padding: 20px;
+
+}
+.gallow {
+    position: relative;
+    width: 50vh;
+    height: 80%;
+    padding: 30px;
+}
+.quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    border: solid #7F00FF 3px;
+    width: 45vw;
+    height: 80%;
+    padding: 30px;
+    background-color: #fff;
+}
+.word {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.question {
+    font-size: 35px;
+    text-align: center;
+}
+.incorrect {
+    font-size: 30px;
+    text-align: center;
+}
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    height: 40%;
+    width: fit-content;
+}
+.letter {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: solid black 2px;
+    font-size: 19px;
+    text-align: center;
+    line-height: 40px;
+    color: #00ffff;
+    background-color: gray;
+    cursor: pointer;
+}
+.active {
+    background-color: black;
+    cursor: default;
+}
+.activePermanent {
+    background-color: black;
+}
+.inner {
+    width: 100%;
+    height: 100%;
+    background: rgba(64, 63, 61, 0.80);
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+.modal {
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 500px;
+    height: 200px;
+    background-color: goldenrod;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 6;
+    padding: 20px;
+    border: solid black 4px;
+}
+.text {
+    font-size: 30px;
+    text-align: center;
+}
+.tryAgain {
+    width: 30%;
+    align-self: center;
+    cursor: pointer;
+    border: solid black 2px;
+    border-radius: 10%;
+}
+.gallow_1, .gallow_2, .gallow_3, .gallow_4, .part_1, .part_2, .part_3, .part_4, .part_5, .part_6 {
+    position: absolute;
+}
+.gallow_1 {
+    height: 80%;
+    width: 8%;
+    z-index: 3;
+}
+.gallow_2 {
+    height: 20%;
+    width: 30%;
+}
+.gallow_3 {
+    height: 7%;
+    width: 70%;
+    z-index: 2;
+}
+.gallow_4 {
+    left: 65.2%;
+    height: 15%;
+    width: 1.5%;
+    z-index: 1;
+}
+.part_1 {
+    left: 58.5%;
+    top: 17%;
+    height: 12%;
+    width: 15%;
+    z-index: 1;
+}
+.part_2 {
+    left: 65%;
+    top: 28%;
+    height: 25%;
+    width: 1.7%;
+}
+.part_3 {
+    left: 51%;
+    top: 32.5%;
+    height: 14%;
+    width: 15%;
+}
+.part_4 {
+    left: 65.5%;
+    top: 32.5%;
+    height: 14%;
+    width: 15%;
+}
+.part_5 {
+    left: 51%;
+    top: 52%;
+    height: 14%;
+    width: 15%;
+}
+.part_6 {
+    left: 65.5%;
+    top: 52%;
+    height: 14%;
+    width: 15%;
+}
+
+@media screen and (max-width: 1500px){
+    .wrapper {
+        flex-direction: column;
+    }
+    .quiz {
+        width: 93%;
+        height: 45%;
+        padding: 20px;
+    }
+    .gallow {
+        padding: 10px;
+        height: 55%;
+        width: 40vh;
+    }
+}
+@media screen and (max-width: 970px){
+    .quiz {
+        gap: 15px;
+        justify-content: flex-start;
+    }
+    .word, .incorrect {
+        font-size: 22px;
+    }
+    .question {
+        font-size: 24px;
+    }
+    .letter {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+@media screen and (max-width: 700px){
+    .question {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 560px){
+    .wrapper {
+        padding: 5px;
+    }
+    .gallow {
+        width: 258px;
+    }
+    .quiz {
+        gap: 10px;
+        padding: 10px;
+    }
+    .word, .incorrect {
+        font-size: 14px;
+    }
+    .question {
+        font-size: 15px;
+    }
+    .letter {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+    }
+    .modal {
+        width: 300px;
+        height: 220px;
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 430px){
+    .quiz {
+        width: fit-content;
+    }
+}
