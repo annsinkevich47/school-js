@@ -1,0 +1,15 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    background-color: #E1D4C9;
+}
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    max-width: 1361px;
+    margin: 0 auto;
+}
+@import "_style-main.scss";
+@import "_style-coffee.scss";
+@import "_media.scss";
