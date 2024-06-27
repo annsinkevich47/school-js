@@ -1,0 +1,188 @@
+@media screen and (max-height: 900px) {
+    .start {
+        
+        &__option {
+            display: inline;
+            height: fit-content;
+        }
+        &__menu {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+@media screen and (max-height: 600px) {
+    .wrapper {
+        &__vertical-div, &__top-div {
+            font-size: 15px;
+        }
+    }
+}
+@media screen and (max-width: 2500px) {
+    .wrapper {
+        font-size: 26px;
+        width: 75vw;
+        height: 55vh;
+        top: 40%;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .wrapper {
+        width: 80vw;
+        height: 55vh;
+        font-size: 20px;
+        &__topLine, &__verticalLine {
+            grid-template-columns: 20% 80%;
+        }
+    }
+}
+@media screen and (max-width: 1100px) {
+    .wrapper {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .wrapper {
+        width: 85vw;
+        height: 65vh;
+        top: 50%;
+    }
+    .reset__btn, .save, .load, .press__text, .timer__min, .timer__sec, .timer__semi, .solution {
+        font-size: 15px;
+    }
+    .press {
+        &__canvas {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .reset {
+        top: 15px;
+        width: 65px;
+        &__img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .load, .save, .timer {
+        top: 15px
+    }
+    .solution {
+        top: 42px;
+    }
+    .timer {
+        width: 40px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .save, .load, .reset__btn, .solution {
+        font-size: 10px;
+    }
+    .save {
+        height: fit-content;
+        left: 35%;
+        top: 25px
+    }
+    .load {
+        height: fit-content;
+        left: 68%;
+        top: 25px;
+    }
+    .theme, .dice {
+        width: 20px;
+        height: 20px;
+    }
+    .theme {
+        top: 20px
+    }
+    .dice {
+        top: 50px
+    }
+    .start {
+        font-size: 12px;
+    }
+    .reset {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .reset {
+        left: 12%;
+        width: fit-content;
+        &__btn {
+            display: none;
+        }
+    }
+    .solution {
+        left: 12%;
+    }
+    .theme {
+        top: 10px;
+        left: 20px;
+    }
+    .dice {
+        top: 40px;
+        left: 20px;
+    }
+}
+@media screen and (max-width: 570px) {
+    .save {
+        left: 28%;
+    }
+    .press {
+        flex-direction: column;
+        width: auto;
+        gap: 3px;
+        height: 55px;
+        top: 10px;
+        &__text {
+            font-size: 10px;
+            order: 1;
+            padding: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    .start {
+        padding: 80px 15px;
+        font-size: 8px;
+        &__difficulty {
+            padding-left: 8px;
+        }
+        &__textForTable {
+            margin-top: 20px;
+        }
+    }
+    .modal {
+        width: 80vw;
+        height: 40vh;
+        font-size: 15px;
+        &__tryAgain, &__reset, &__random {
+            width: 20%;
+            font-size: 10px;
+        }
+    }
+}
+@media screen and (max-width: 470px) {
+    .wrapper {
+        width: 95vw;
+        height: 65vh;
+        &__vertical-div, &__top-div {
+            font-size: 10px;
+        }
+    }
+    .start {
+        &__name {
+            width: 40px;
+        }
+    }
+    .save {
+        left: 35%;
+    }
+}
+@media screen and (max-width: 360px) {
+    .start {
+        padding: 80px 10px;
+    }
+}
