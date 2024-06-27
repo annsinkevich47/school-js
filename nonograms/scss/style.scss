@@ -1,0 +1,15 @@
+body {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    background-color: #c3dbe0;
+}
+.container {
+    max-width: 1361px;
+    margin: 0 auto;
+}
+.body {
+    position: relative;
+}
+@import '_table.scss';
+@import '_menu.scss';
+@import '_media.scss';
