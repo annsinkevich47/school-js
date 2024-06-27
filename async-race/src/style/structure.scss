@@ -1,0 +1,146 @@
+button {
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main {
+  margin: 15px 0;
+  // min-height: 50vh;
+}
+.toGarage,
+.toWinners,
+.prevPage,
+.nextPage {
+  background-color: #a71aac;
+  border-radius: 15%;
+}
+.colorPalette {
+  display: grid;
+  width: 30vw;
+  grid-template: 50% 50% / 50% 10% 25%;
+  column-gap: 15px;
+}
+.buttonsWrapper,
+.navigate,
+.pageBtn {
+  display: flex;
+  gap: 10px;
+}
+.carsWrapper,
+.cardWrapper,
+.controlsWrapper {
+  display: flex;
+  gap: 3vh;
+}
+.carsWrapper,
+.cardWrapper {
+  flex-direction: column;
+}
+.trackWithCar {
+  position: relative;
+}
+.A,
+.B {
+  position: absolute;
+}
+.B {
+  left: 2vw;
+}
+.trackImage {
+  width: 95vw;
+  height: 6vh;
+}
+// @keyframes move {
+//     from {left: 5vw;}
+//     to {left: 80vw;}
+// }
+// .carMove {
+//     animation-name: move;
+//     animation-duration: 4s;
+// }
+.icon-car {
+  position: absolute;
+  transform: scale(-1, 1);
+  width: 14vh;
+  left: 5vw;
+  top: -1vh;
+}
+.nameWrapper,
+.namePageWrapper,
+.winnersWrapper,
+.namePageWrapperWinners {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.garageName,
+.pageName,
+.winnersName,
+.pageNameWinners {
+  display: inline;
+}
+.numberOfCars,
+.numberOfPage,
+.numberOfWinners,
+.numberOfPageWinners {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+// .winners {
+//     display: none;
+// }
+.winnersName {
+  font-size: 2em;
+  font-weight: bold;
+}
+.icon-win {
+  position: static;
+}
+.tableWrapper {
+  border: 3px solid purple;
+  border-spacing: 3vw 10px;
+}
+// table tr {
+//     border-bottom: 10px solid black;
+//     // border-collapse: collapse;
+// }
+.greeting {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 20vw;
+  height: 10vh;
+  background-color: #371238;
+  border: solid black 1px;
+  border-radius: 15%;
+}
+.greetingText {
+  color: antiquewhite;
+}
+.greetingCross {
+  cursor: pointer;
+}
+.firstStick,
+.secondStick {
+  position: absolute;
+  z-index: 8;
+  width: 7%;
+  height: 5%;
+  top: 25%;
+  right: 3%;
+  background-color: #b22ebe;
+}
+.firstStick {
+  transform: rotate(45deg);
+}
+.secondStick {
+  transform: rotate(-45deg);
+}
