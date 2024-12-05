@@ -1,10 +1,10 @@
-import products from "./products.json" assert {type: "json"};
+import products from "./products.json" with {type: "json"};
 
 const button = document.querySelectorAll(".menu__button");
 
 var category = "coffee";
 
-function displayWidth () {
+function displayWidth() {
     if (document.querySelectorAll(".menu__item").length < 5 || document.documentElement.clientWidth > 768) {
         let newLoad = document.querySelector(".menu__refresh");
         newLoad.style.display = "none";
@@ -15,7 +15,7 @@ function displayWidth () {
 }
 
 button.forEach(item => {
-    item.addEventListener ("click", getInput);
+    item.addEventListener("click", getInput);
 })
 
 
@@ -24,13 +24,13 @@ let indexVar = 0;
 
 const ROOT__CARD = document.getElementById("menu__dishes");
 class Card {
-    
+
     render() {
         let htmlCatalog1 = "";
-        
+
         products.forEach((element, index) => {
             if (element.category == category) {
-             htmlCatalog1 += `
+                htmlCatalog1 += `
                 <div class="menu__item ${indexVar}">
                     <div class="menu__photo"><img src=${element.image} alt=${element.name} ${index}></div>
                     <div class="menu__descr">
@@ -43,30 +43,30 @@ class Card {
                 </div>
                 `
             }
-        indexVar++
-        if (indexVar < 10) {
-            indexVar
-        }
+            indexVar++
+            if (indexVar < 10) {
+                indexVar
+            }
 
-        // console.log(indexVar);
-    });
-    indexVar = 0;
-    const html1 = `
+            // console.log(indexVar);
+        });
+        indexVar = 0;
+        const html1 = `
     ${htmlCatalog1}
     `;
-    ROOT__CARD.innerHTML = html1;
+        ROOT__CARD.innerHTML = html1;
+    }
 }
-}
-const cardPage = new Card ();
+const cardPage = new Card();
 cardPage.render();
-    
-function getInput (event) {
+
+function getInput(event) {
     let eventClass = event.currentTarget.className.slice(39);
     let newBtnCat = document.querySelectorAll(".menu__button");
     newBtnCat.forEach(item => item.classList.remove("blackBtnModal"));
     event.currentTarget.classList.add("blackBtnModal");
     let nameRadio = document.getElementsByName("category");
-	for (let i = 0; i < nameRadio.length; i++) {
+    for (let i = 0; i < nameRadio.length; i++) {
         if (nameRadio[i].id == eventClass) {
             category = nameRadio[i].value;
             ROOT__CARD.innerHTML = "";
@@ -74,12 +74,12 @@ function getInput (event) {
             cardPage.render();
             productsPage.render();
             refresh();
-	    }
+        }
     }
 }
 
 var end = 0;
-function ref (end) {
+function ref(end) {
     document.querySelector(".modal__total_price").textContent = end;
     console.log(end);
     console.log(document.querySelector(".modal__total_price"));
@@ -93,8 +93,8 @@ class Prod {
         let htmlCatalog = "";
 
         products.forEach((element, index) => {
-            
-        if (element.category == category) {
+
+            if (element.category == category) {
                 htmlCatalog += `
             <div class="modal__wrap ${index}">
                 <div class="modal__photo"><img class="modal__img" src=${element.image} alt=${element.name}></div>
@@ -167,7 +167,7 @@ class Prod {
                 </div>
             </div>
             `
-        }
+            }
 
         });
         const html = `
@@ -176,7 +176,7 @@ class Prod {
         ROOT__PROD.innerHTML = html;
     }
 }
-const productsPage = new Prod ();
+const productsPage = new Prod();
 productsPage.render();
 
 
@@ -189,29 +189,29 @@ function refresh() {
     let itemMenu = document.querySelectorAll(".modal__wrap");
 
     image.forEach(item => {
-        item.addEventListener ("click", showModal, true);
+        item.addEventListener("click", showModal, true);
     })
-    inner.addEventListener ("click", closeModal);
+    inner.addEventListener("click", closeModal);
     load.style.display = "flex";
     const buttonsSize = document.querySelectorAll(".modal__size_item");
     const buttonsAdditives = document.querySelectorAll(".modal__additives_item");
     const buttonInput = document.querySelectorAll(".input_adds");
 
     buttonsSize.forEach(item => {
-        item.addEventListener ("click", makeActive);
+        item.addEventListener("click", makeActive);
     })
     buttonsAdditives.forEach(item => {
-        item.addEventListener ("click", makeActive1);
+        item.addEventListener("click", makeActive1);
     })
     buttonInput.forEach(item => {
-        item.addEventListener ("click", getPrice);
+        item.addEventListener("click", getPrice);
     })
     const close = document.querySelectorAll(".modal__close");
-    close.forEach (item => {
+    close.forEach(item => {
         item.addEventListener("click", closeM);
     })
     displayWidth();
-    
+
 }
 
 
@@ -225,10 +225,10 @@ let load = document.querySelector(".menu__refresh");
 
 
 image.forEach(item => {
-    item.addEventListener ("click", showModal, true);
+    item.addEventListener("click", showModal, true);
 })
-inner.addEventListener ("click", closeModal);
-load.addEventListener ("click", loadMore);
+inner.addEventListener("click", closeModal);
+load.addEventListener("click", loadMore);
 
 let goal;
 function showModal(event) {
@@ -243,27 +243,27 @@ function showModal(event) {
         }
     })
     goal.style.display = "flex";
-    document.body.style.overflow = "hidden";  
+    document.body.style.overflow = "hidden";
 }
 
 function closeModal(event) {
 
-	const withinBoundaries = event.composedPath().includes(modal);
- 
-	if ( ! withinBoundaries) {
-		modal.style.display = 'none'; 
+    const withinBoundaries = event.composedPath().includes(modal);
+
+    if (!withinBoundaries) {
+        modal.style.display = 'none';
         inner.style.display = "none";
         document.body.style.overflow = "visible";
         goal.style.display = "none";
-	}
+    }
 }
 
-function loadMore () {
+function loadMore() {
     let newImage = document.querySelectorAll(".menu__item");
     newImage.forEach(item => {
         item.style.display = "block";
     })
-    
+
     load.style.display = "none";
 }
 
@@ -274,27 +274,27 @@ const buttonInput1 = document.querySelectorAll(".input_size");
 const close = document.querySelectorAll(".modal__close");
 
 buttonsSize.forEach(item => {
-    item.addEventListener ("click", makeActive);
+    item.addEventListener("click", makeActive);
 })
 buttonsAdditives.forEach(item => {
-    item.addEventListener ("click", makeActive1);
+    item.addEventListener("click", makeActive1);
 })
 buttonInput.forEach(item => {
-    item.addEventListener ("click", getPrice);
+    item.addEventListener("click", getPrice);
 })
 buttonInput1.forEach(item => {
-    item.addEventListener ("click", getPrice1);
+    item.addEventListener("click", getPrice1);
 })
-close.forEach (item => {
+close.forEach(item => {
     item.addEventListener("click", closeM);
 })
 
 
 
 
-function closeM () {
+function closeM() {
     close.forEach(item => {
-        modal.style.display = 'none'; 
+        modal.style.display = 'none';
         inner.style.display = "none";
         document.body.style.overflow = "visible";
         goal.style.display = "none";
@@ -306,7 +306,7 @@ function closeM () {
 let innerPrice = 0;
 var count = 0;
 
-function getPrice (event) {
+function getPrice(event) {
     let name = event.target.name;
     let newClass = event.currentTarget.className.slice(11);
     let trade = event.currentTarget;
@@ -318,7 +318,7 @@ function getPrice (event) {
     // console.log(name)
     for (let i = 0; i < products.length; i++) {
         for (let j = 0; j < 3; j++) {
-            let docName = (products[i].additives[j].name); 
+            let docName = (products[i].additives[j].name);
             if (docName === name) {
                 let addPrice = Number((products[i].additives[j]["add-price"]));
                 let biblioClass = document.querySelectorAll(".modal__total_price");
@@ -343,77 +343,77 @@ function getPrice (event) {
                 // console.log(innerPrice);
                 let totalPrice = innerPrice += addPrice;
                 end += totalPrice;
-                
+
                 // document.querySelectorAll(".modal__additives_item").forEach(item => {
                 //     console.log(item.className);
                 // })
                 makeActive3();
-                countTotal(totalPrice, goal , trade);
-                
+                countTotal(totalPrice, goal, trade);
+
                 console.log(end);
                 return
             }
         }
     }
 }
-function getPrice1 (event) {
+function getPrice1(event) {
     let name = event.target.name;
     let newClass = event.currentTarget.className.slice(11);
     let size = event.target.value;
     let trade = event.currentTarget;
     trade.classList.add("active");
-    
-    
+
+
     console.log(name);
     for (let i = 0; i < products.length; i++) {
-            let docName = (products[i].sizes[size].size); 
-            // console.log(docName);
-                if (docName === name) {
-                    let addPrice = Number((products[i].sizes[size]["add-price"]));
-                    let biblioClass = document.querySelectorAll(".modal__total_price");
-                    // console.log(biblioClass);
-                    let goal1;
-                    biblioClass.forEach(item => {
-                        let b = item.className.slice(19);
-                        // console.log(b);
-                            if (newClass == b) {
-                                goal1 = item;
-                            }
-                    })
-                    console.log(goal1);
-                    
-                    innerPrice = Number(goal1.innerHTML);
-                    console.log(innerPrice);
-                    let totalPrice = innerPrice += addPrice;
-                    end += totalPrice;
+        let docName = (products[i].sizes[size].size);
+        // console.log(docName);
+        if (docName === name) {
+            let addPrice = Number((products[i].sizes[size]["add-price"]));
+            let biblioClass = document.querySelectorAll(".modal__total_price");
+            // console.log(biblioClass);
+            let goal1;
+            biblioClass.forEach(item => {
+                let b = item.className.slice(19);
+                // console.log(b);
+                if (newClass == b) {
+                    goal1 = item;
+                }
+            })
+            console.log(goal1);
 
-                    countTotal(totalPrice, goal1, trade)
-                    
-                    console.log(totalPrice);
-                    return
+            innerPrice = Number(goal1.innerHTML);
+            console.log(innerPrice);
+            let totalPrice = innerPrice += addPrice;
+            end += totalPrice;
+
+            countTotal(totalPrice, goal1, trade)
+
+            console.log(totalPrice);
+            return
         }
     }
-    
+
 }
-function makeActive (event) {
+function makeActive(event) {
     // console.log(event)
     let newBtnSize = document.querySelectorAll(".modal__size_item");
     newBtnSize.forEach(item => item.classList.remove("blackBtnModal"));
     event.currentTarget.classList.add("blackBtnModal");
 }
 let Active1;
-function makeActive1 (event) {
+function makeActive1(event) {
     // console.log(event)
     Active1 = event.currentTarget;
     event.currentTarget.classList.toggle("blackBtnModal");
     // console.log(Active1)
 }
-function makeActive3 () {
+function makeActive3() {
     Active1.classList.toggle("blackBtnModal");
 }
 let divPrice;
-function countTotal (valueFromFirst,  divWithPrice, divFromFirst) {
-    
+function countTotal(valueFromFirst, divWithPrice, divFromFirst) {
+
     if (divFromFirst.classList.contains("active")) {
         divPrice = divWithPrice;
         divWithPrice.innerHTML = valueFromFirst;
@@ -425,5 +425,5 @@ function countTotal (valueFromFirst,  divWithPrice, divFromFirst) {
     //     divPrice.innerHTML = div;
     //     divPrice = 0;
     // }
-} 
+}
 
